@@ -22,8 +22,28 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
+Route::get('/about', function () {
+    return view('about-us');
+})->name('about');
 
-Route::get('/about',[MainController::class, 'about'])->name('about');
+
+Route::get('/thankyou', function () {
+    return view('thankyou');
+})->name('thankyou');
+
+
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+})->name('privacy-policy');
+
+Route::get('/return-policy', function () {
+    return view('return-policy');
+})->name('return-policy');
+
+Route::get('/terms-conditions', function () {
+    return view('terms-conditions');
+})->name('terms-conditions');
+
 
 Route::get('/cart',[MainController::class, 'cart'])->name('cart');
 
