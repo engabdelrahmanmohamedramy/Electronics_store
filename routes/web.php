@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
@@ -45,11 +46,14 @@ Route::get('/terms-conditions', function () {
 })->name('terms-conditions');
 
 
-Route::get('/cart',[MainController::class, 'cart'])->name('cart');
+Route::get('/cart',[CartController::class, 'cart'])->name('cart');
 
-Route::get('/contact-us',[MainController::class, 'contact-us'])->name('contact-us');
 
-Route::get('/checkout',[MainController::class, 'checkout'])->name('checkout');
+Route::get('/contact-us',[ContactController::class, 'contact'])->name('contact-us');
+Route::post('/send-message',[ContactController::class, 'sendEmail'])->name('contact.send');
+
+
+Route::get('/checkout',[CheckoutController::class, 'checkout'])->name('checkout');
 
 
 /** brands **/
