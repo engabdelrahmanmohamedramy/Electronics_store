@@ -1,7 +1,5 @@
 @extends('layout.all_user')
-
 @section('content')
-
 	<main id="main">
 		<div class="container">
 

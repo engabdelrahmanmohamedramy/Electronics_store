@@ -107,7 +107,10 @@
   									<div class="item-content">
   										<div class="wrap-vertical-nav">
   											<ul>
+  												<li class="menu-item"><a href="#" class="link-term">My Account</a></li>
+  												<li class="menu-item"><a href="#" class="link-term">Brands</a></li>
   												<li class="menu-item"><a href="#" class="link-term">Gift Certificates</a></li>
+  												<li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
   												<li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
   											</ul>
   										</div>
@@ -118,7 +121,10 @@
   									<div class="item-content">
   										<div class="wrap-vertical-nav">
   											<ul>
-  												<li class="menu-item"><a href="{{route('contact-us')}}" class="link-term">Contact Us</a></li>
+  												<li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
+  												<li class="menu-item"><a href="#" class="link-term">Returns</a></li>
+  												<li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
+  												<li class="menu-item"><a href="#" class="link-term">Specials</a></li>
   												<li class="menu-item"><a href="#" class="link-term">Order History</a></li>
   											</ul>
   										</div>
@@ -205,10 +211,10 @@
   					<div class="coppy-right-item item-right">
   						<div class="wrap-nav horizontal-nav">
   							<ul>
-  								<li class="menu-item"><a href="{{route('about')}}" class="link-term">About us</a></li>
-  								<li class="menu-item"><a href="{{route('privacy-policy')}}" class="link-term">Privacy Policy</a></li>
-  								<li class="menu-item"><a href="{{route('terms-conditions')}}" class="link-term">Terms & Conditions</a></li>
-  								<li class="menu-item"><a href="{{route('return-policy')}}" class="link-term">Return Policy</a></li>
+  								<li class="menu-item"><a href="../about-us.html" class="link-term">About us</a></li>
+  								<li class="menu-item"><a href="../privacy-policy.html" class="link-term">Privacy Policy</a></li>
+  								<li class="menu-item"><a href="../terms-conditions.html" class="link-term">Terms & Conditions</a></li>
+  								<li class="menu-item"><a href="../return-policy.html" class="link-term">Return Policy</a></li>
   							</ul>
   						</div>
   					</div>
@@ -220,7 +226,14 @@
 
   	<script src="{{asset('assets/js/jquery-1.12.4.minb8ff.js')}}"></script>
   	<script src="{{asset('assets/js/jquery-ui-1.12.4.minb8ff.js')}}"></script>
-  	<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    @if(app()->getLocale()=='en')
+  	   <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    @else
+      <script
+        src="https://cdn.rtlcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-B4D+9otHJ5PJZQbqWyDHJc6z6st5fX3r680CYa0Em9AUG6jqu5t473Y+1CTZQWZv"
+        crossorigin="anonymous"></script>
+    @endif
   	<script src="{{asset('assets/js/jquery.flexslider.js')}}"></script>
   	<script src="{{asset('assets/js/chosen.jquery.min.js')}}"></script>
   	<script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>

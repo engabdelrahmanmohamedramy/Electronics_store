@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html @if(app()->getLocale()=='en')  lang="en" dir="ltr" @else lang="ar" dir="rtl" @endif  >
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Control Panel</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/logo-top-1.png')}}">
+	<title>Electronics</title>
+	<link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.ico')}}">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/animate.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
+	@if(app()->getLocale()=='en')
+		<link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
+	@else
+		<link
+		  rel="stylesheet"
+		  href="https://cdn.rtlcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		  integrity="sha384-cSfiDrYfMj9eYCidq//oGXEkMc0vuTxHXizrMOFAaPsLt1zoCUVnSsURN+nef1lj"
+		  crossorigin="anonymous">
+	@endif
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/owl.carousel.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/chosen.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/color-01.css')}}">
 	@yield('css')
-	
 </head>
-
 <body class="home-page home-01 ">
 
 	<!-- mobile menu -->
@@ -44,15 +50,40 @@
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
-								<li class="menu-item" ><a title="Register or Login" href="{{route('register')}}">Login</a></li>
-								<li class="menu-item" ><a title="Register or Login" href="{{route('login')}}">Register</a></li>
+								@if(!Auth::check())
+									<li class="menu-item" ><a title="Register or Login" href="{{route('login')}}">Login</a></li>
+									<li class="menu-item" ><a title="Register or Login" href="{{route('register')}}">Register</a></li>
+								@else
+									<li class="nav-item dropdown">
+		                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+		                                    {{ Auth::user()->name_en }}
+		                                </a>
+
+		                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+		                                    <a class="dropdown-item" href="{{ route('logout') }}"
+		                                       onclick="event.preventDefault();
+		                                                     document.getElementById('logout-form').submit();">
+		                                        {{ __('Logout') }}
+		                                    </a>
+
+		                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+		                                        @csrf
+		                                    </form>
+		                                </div>
+		                            </li>
+								@endif
 								<li class="menu-item lang-menu menu-item-has-children parent">
-									<a title="English" href="#"><span class="img label-before"><img src="{{asset('assets/images/lang-en.png')}}" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-									<ul class="submenu lang" >
-										<li class="menu-item" ><a title="Arabic" href="#"><span class="img label-before"><img src="{{asset('assets/images/lang-ara.png')}}" alt="lang-ara"></span>Arabic</a></li>
-										<li class="menu-item" ><a title="german" href="#"><span class="img label-before"><img src="{{asset('assets/images/lang-ger.png')}}" alt="lang-ger" ></span>German</a></li>
-										<li class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="{{asset('assets/images/lang-fra.png')}}" alt="lang-fre"></span>French</a></li>
-									</ul>
+									@if(app()->getLocale()=='en')
+										<a title="English" href="{{route('language','en')}}"><span class="img label-before"><img src="{{asset('assets/images/lang-en.png')}}" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+										<ul class="submenu lang" >
+											<li class="menu-item" ><a title="Arabic" href="{{route('language','ar')}}"><span class="img label-before"><img src="{{asset('assets/images/lang-ara.png')}}" alt="lang-ara"></span>العربية</a></li>
+										</ul>
+									@else
+										 <a title="Arabic" href="{{route('language','ar')}}"><span class="img label-before"><img src="{{asset('assets/images/lang-ara.png')}}" alt="lang-en"></span>العربية<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+										<ul class="submenu lang" >
+											<li class="menu-item" ><a title="English" href="{{route('language','en')}}"><span class="img label-before"><img src="{{asset('assets/images/lang-en.png')}}" alt="lang-ara"></span>English</a></li>
+										</ul>
+									@endif
 								</li>
 								<li class="menu-item menu-item-has-children parent" >
 									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -74,7 +105,7 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="{{route('index')}}" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}" width="50px" alt="Electronics Store"></a>
+							<a href="index.html" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}" width="50px" alt="Electronics Store"></a>
 						</div>
 
 						<div class="wrap-search center-section">
@@ -188,10 +219,10 @@
 										<a href="{{route('brands')}}" class="link-term mercado-item-title">Brands</a>
 									</li>
 								@endif
-								
+
 								@if(url()->current()==  route('products'))
 									<li class="menu-item home-icon">
-										<a href="#" class="link-term mercado-item-title">Products</a>	
+										<a href="#" class="link-term mercado-item-title">Products</a>
 									</li>
 								@else
 									<li class="menu-item ">
@@ -201,7 +232,7 @@
 
 								@if(url()->current()==  route('colors'))
 									<li class="menu-item home-icon">
-										<a href="#" class="link-term mercado-item-title">Colors</a>	
+										<a href="#" class="link-term mercado-item-title">Colors</a>
 									</li>
 								@else
 									<li class="menu-item ">
@@ -211,7 +242,7 @@
 
 								@if(url()->current()==  route('users'))
 									<li class="menu-item home-icon">
-										<a href="#" class="link-term mercado-item-title">Users</a>	
+										<a href="#" class="link-term mercado-item-title">Users</a>
 									</li>
 								@else
 									<li class="menu-item ">
@@ -221,7 +252,7 @@
 
 								@if(url()->current()==  route('admins'))
 									<li class="menu-item home-icon">
-										<a href="#" class="link-term mercado-item-title">Admins</a>	
+										<a href="#" class="link-term mercado-item-title">Admins</a>
 									</li>
 								@else
 									<li class="menu-item ">
