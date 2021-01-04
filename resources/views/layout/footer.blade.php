@@ -52,7 +52,7 @@
 
   						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
   							<div class="wrap-footer-item">
-  								<h3 class="item-header">Contact Details</h3>
+  								<h3 class="item-header">{{__('all.CONTACT DETAILS')}}</h3>
   								<div class="item-content">
   									<div class="wrap-contact-detail">
   										<ul>
@@ -87,7 +87,7 @@
   							</div>
 
   							<div class="wrap-footer-item footer-item-second">
-  								<h3 class="item-header">Sign up for newsletter</h3>
+  								<h3 class="item-header">{{__('all.SIGN UP FOR NEWSLETTER')}}</h3>
   								<div class="item-content">
   									<div class="wrap-newletter-footer">
   										<form action="#" class="frm-newletter" id="frm-newletter">
@@ -108,21 +108,21 @@
   										<div class="wrap-vertical-nav">
   											<ul>
   												<li class="menu-item"><a href="#" class="link-term">My Account</a></li>
-  												<li class="menu-item"><a href="#" class="link-term">Brands</a></li>
+  												<li class="menu-item"><a href="#" class="link-term">{{__('all.brands')}}</a></li>
   												<li class="menu-item"><a href="#" class="link-term">Gift Certificates</a></li>
   												<li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
-  												<li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
+  												<li class="menu-item"><a href="#" class="link-term">{{__('all.Wishlist')}}</a></li>
   											</ul>
   										</div>
   									</div>
   								</div>
   								<div class="wrap-footer-item twin-item">
-  									<h3 class="item-header">Infomation</h3>
+  									<h3 class="item-header">{{__('all.INFOMATION')}}</h3>
   									<div class="item-content">
   										<div class="wrap-vertical-nav">
   											<ul>
-  												<li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
-  												<li class="menu-item"><a href="#" class="link-term">Returns</a></li>
+  												<li class="menu-item"><a href="{{route('contact-us')}}" class="link-term">{{__('all.contact')}}</a></li>
+  												<li class="menu-item"><a href="{{route('return-policy')}}" class="link-term">{{__('all.Return Policy')}}</a></li>
   												<li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
   												<li class="menu-item"><a href="#" class="link-term">Specials</a></li>
   												<li class="menu-item"><a href="#" class="link-term">Order History</a></li>
@@ -139,10 +139,10 @@
 
   						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
   							<div class="wrap-footer-item">
-  								<h3 class="item-header">We Using Safe Payments:</h3>
+  								<h3 class="item-header">{{__('all.WE USING SAFE PAYMENTS:')}}</h3>
   								<div class="item-content">
   									<div class="wrap-list-item wrap-gallery">
-  										<img src="../assets/images/payment.png" style="max-width: 260px;">
+  										<img src="{{asset('/assets/images/payment.png')}}" style="max-width: 260px;">
   									</div>
   								</div>
   							</div>
@@ -150,7 +150,7 @@
 
   						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
   							<div class="wrap-footer-item">
-  								<h3 class="item-header">Social network</h3>
+  								<h3 class="item-header">{{__('all.SOCIAL NETWORK')}}</h3>
   								<div class="item-content">
   									<div class="wrap-list-item social-network">
   										<ul>
@@ -170,11 +170,10 @@
   				<div class="wrap-back-link">
   					<div class="container">
   						<div class="back-link-box">
-  							<h3 class="backlink-title">Quick Links</h3>
+  							<h3 class="backlink-title">{{__('all.QUICK LINKS')}}</h3>
   							<div class="back-link-row">
   								<ul class="list-back-link" >
-  									<li><span class="row-title">Mobiles:</span></li>
-  									<li><a href="#" class="redirect-back-link" title="mobile">Mobiles</a></li>
+  									<li><span class="row-title">{{__('all.Mobiles')}}:</span></li>
   									<li><a href="#" class="redirect-back-link" title="Redmi">Redmi</a></li>
   									<li><a href="#" class="redirect-back-link" title="HUAWEI Mobiles GL">HUAWEI</a></li>
   									<li><a href="#" class="redirect-back-link" title="Mobiles Bsus">Iphone</a></li>
@@ -185,7 +184,7 @@
   								</ul>
 
   								<ul class="list-back-link" >
-  									<li><span class="row-title">Tablets:</span></li>
+  									<li><span class="row-title">{{__('all.Tablets:')}}</span></li>
   									<li><a href="#" class="redirect-back-link" title="Plesc YPads">Plesc YPads</a></li>
   									<li><a href="#" class="redirect-back-link" title="Samsyng Tablets" >Samsyng Tablets</a></li>
   									<li><a href="#" class="redirect-back-link" title="Qindows Tablets" >Iphone Tablets</a></li>
@@ -206,15 +205,15 @@
   			<div class="coppy-right-box">
   				<div class="container">
   					<div class="coppy-right-item item-left">
-  						<p class="coppy-right-text">Copyright © 2020 eng.abdelrahman.mohamed.ramy45@gmail.com . All rights reserved</p>
+  						<p class="coppy-right-text">{{__('all.Copyright © 2020 eng.abdelrahman.mohamed.ramy45@gmail.com . All rights reserved')}}</p>
   					</div>
   					<div class="coppy-right-item item-right">
   						<div class="wrap-nav horizontal-nav">
   							<ul>
-  								<li class="menu-item"><a href="../about-us.html" class="link-term">About us</a></li>
-  								<li class="menu-item"><a href="../privacy-policy.html" class="link-term">Privacy Policy</a></li>
-  								<li class="menu-item"><a href="../terms-conditions.html" class="link-term">Terms & Conditions</a></li>
-  								<li class="menu-item"><a href="../return-policy.html" class="link-term">Return Policy</a></li>
+  								<li class="menu-item"><a href="{{route('about')}}" class="link-term">{{__('all.about')}}</a></li>
+  								<li class="menu-item"><a href="{{route('privacy-policy')}}" class="link-term">{{__('all.Privacy Policy')}}</a></li>
+  								<li class="menu-item"><a href="{{route('terms-conditions')}}" class="link-term">{{__('all.Terms & conditions')}}</a></li>
+  								<li class="menu-item"><a href="{{route('return-policy')}}" class="link-term">{{__('all.Return Policy')}}</a></li>
   							</ul>
   						</div>
   					</div>

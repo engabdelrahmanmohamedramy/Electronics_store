@@ -51,8 +51,8 @@
 						<div class="topbar-menu right-menu">
 							<ul>
 								@if(!Auth::check())
-									<li class="menu-item" ><a title="Register or Login" href="{{route('login')}}">Login</a></li>
-									<li class="menu-item" ><a title="Register or Login" href="{{route('register')}}">Register</a></li>
+									<li class="menu-item" ><a title="Register or Login" href="{{route('login')}}">{{__('all.Login')}}</a></li>
+									<li class="menu-item" ><a title="Register or Login" href="{{route('register')}}">{{__('all.Register')}}</a></li>
 								@else
 									<li class="nav-item dropdown">
 		                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -63,7 +63,7 @@
 		                                    <a class="dropdown-item" href="{{ route('logout') }}"
 		                                       onclick="event.preventDefault();
 		                                                     document.getElementById('logout-form').submit();">
-		                                        {{ __('Logout') }}
+		                                        {{ __('all.Logout') }}
 		                                    </a>
 
 		                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -91,9 +91,6 @@
 										<li class="menu-item" >
 											<a title="Egyptian Pound (EGP)" href="#">Egyptian Pound (EGP)</a>
 										</li>
-										<li class="menu-item" >
-											<a title="Euro (EUR)" href="#">Euro (EUR)</a>
-										</li>
 									</ul>
 								</li>
 							</ul>
@@ -115,9 +112,9 @@
 									<button form="form-search-top" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
 									<div class="wrap-list-cate">
 										<input type="hidden" name="product-cate" value="0" id="product-cate">
-										<a href="#" class="link-control">All Category</a>
+										<a href="#" class="link-control">{{__('all.ALL CATEGORIES')}}</a>
 										<ul class="list-cate">
-											<li class="level-0">All Category</li>
+											<li class="level-0">{{__('all.ALL CATEGORIES')}}</li>
 											<li class="level-1">-Electronics</li>
 											<li class="level-2">Batteries & Chargens</li>
 											<li class="level-2">Headphone & Headsets</li>
@@ -146,7 +143,7 @@
 									<i class="fa fa-heart" aria-hidden="true"></i>
 									<div class="left-info">
 										<span class="index">0 item</span>
-										<span class="title">Wishlist</span>
+										<span class="title">{{__('all.Wishlist')}}</span>
 									</div>
 								</a>
 							</div>
@@ -155,7 +152,7 @@
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
 										<span class="index">4 items</span>
-										<span class="title">CART</span>
+										<span class="title">{{__('all.CART')}}</span>
 									</div>
 								</a>
 							</div>
@@ -175,11 +172,11 @@
 					<div class="header-nav-section">
 						<div class="container">
 							<ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info" >
-								<li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Hot Sale items</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top new items</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top Selling</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top rated items</a><span class="nav-label hot-label">hot</span></li>
+								<li class="menu-item"><a href="#" class="link-term">{{__('all.Weekly Featured')}}</a><span class="nav-label hot-label">hot</span></li>
+								<li class="menu-item"><a href="#" class="link-term">{{__('all.Hot Sale items')}}</a><span class="nav-label hot-label">hot</span></li>
+								<li class="menu-item"><a href="#" class="link-term">{{__('all.Top new items')}}</a><span class="nav-label hot-label">hot</span></li>
+								<li class="menu-item"><a href="#" class="link-term">{{__('all.Top Selling')}}</a><span class="nav-label hot-label">hot</span></li>
+								<li class="menu-item"><a href="#" class="link-term">{{__('all.Top rated items')}}</a><span class="nav-label hot-label">hot</span></li>
 							</ul>
 						</div>
 					</div>
@@ -197,66 +194,66 @@
 									</li>
 								@endif
 								<li class="menu-item">
-									<a href="{{route('shop')}}" class="link-term mercado-item-title">Shop</a>
+									<a href="{{route('shop')}}" class="link-term mercado-item-title">{{__('all.shop')}}</a>
 								</li>
 
 								@if(url()->current()==  route('categories'))
 									<li class="menu-item home-icon">
-										<a href="#" class="link-term mercado-item-title">Categories</a>
+										<a href="#" class="link-term mercado-item-title">{{__('all.categories')}}</a>
 									</li>
 								@else
 									<li class="menu-item">
-										<a href="{{route('categories')}}" class="link-term mercado-item-title">categories</a>
+										<a href="{{route('categories')}}" class="link-term mercado-item-title">{{__('all.categories')}}</a>
 									</li>
 								@endif
 
 								@if(url()->current()==  route('brands'))
 									<li class="menu-item home-icon">
-										<a href="#" class="link-term mercado-item-title">Brands</a>
+										<a href="#" class="link-term mercado-item-title">{{__('all.brands')}}</a>
 									</li>
 								@else
 									<li class="menu-item">
-										<a href="{{route('brands')}}" class="link-term mercado-item-title">Brands</a>
+										<a href="{{route('brands')}}" class="link-term mercado-item-title">{{__('all.brands')}}</a>
 									</li>
 								@endif
 
 								@if(url()->current()==  route('products'))
 									<li class="menu-item home-icon">
-										<a href="#" class="link-term mercado-item-title">Products</a>
+										<a href="#" class="link-term mercado-item-title">{{__('all.products')}}</a>
 									</li>
 								@else
 									<li class="menu-item ">
-										<a href="{{route('products')}}" class="link-term mercado-item-title">Products</a>
+										<a href="{{route('products')}}" class="link-term mercado-item-title">{{__('all.products')}}</a>
 									</li>
 								@endif
 
 								@if(url()->current()==  route('colors'))
 									<li class="menu-item home-icon">
-										<a href="#" class="link-term mercado-item-title">Colors</a>
+										<a href="#" class="link-term mercado-item-title">{{__('all.colors')}}</a>
 									</li>
 								@else
 									<li class="menu-item ">
-										<a href="{{route('colors')}}" class="link-term mercado-item-title">Colors</a>
+										<a href="{{route('colors')}}" class="link-term mercado-item-title">{{__('all.colors')}}</a>
 									</li>
 								@endif
 
 								@if(url()->current()==  route('users'))
 									<li class="menu-item home-icon">
-										<a href="#" class="link-term mercado-item-title">Users</a>
+										<a href="#" class="link-term mercado-item-title">{{__('all.users')}}</a>
 									</li>
 								@else
 									<li class="menu-item ">
-										<a href="{{route('users')}}" class="link-term mercado-item-title">Users</a>
+										<a href="{{route('users')}}" class="link-term mercado-item-title">{{__('all.users')}}</a>
 									</li>
 								@endif
 
 								@if(url()->current()==  route('admins'))
 									<li class="menu-item home-icon">
-										<a href="#" class="link-term mercado-item-title">Admins</a>
+										<a href="#" class="link-term mercado-item-title">{{__('all.admins')}}</a>
 									</li>
 								@else
 									<li class="menu-item ">
-										<a href="{{route('admins')}}" class="link-term mercado-item-title">Admins</a>
+										<a href="{{route('admins')}}" class="link-term mercado-item-title">{{__('all.admins')}}</a>
 									</li>
 								@endif
 							</ul>

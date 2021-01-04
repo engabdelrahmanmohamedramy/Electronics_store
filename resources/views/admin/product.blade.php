@@ -7,7 +7,7 @@
 			 <div class="col-lg-12">
 					 <div class="card">
 							 <div class="card-header">
-									 <strong><h2>Create Product</h2></strong>
+									 <strong><h2>{{ __('all.Create Product') }}</h2></strong>
 							 </div>
 							 <form action="{{route('add_product')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
 							 	@csrf
@@ -15,42 +15,42 @@
 									
 											 <div class="row form-group">
 													 <div class="col col-md-3">
-															 <label for="Name Product" class=" form-control-label">Name Product</label>
+															 <label for="Name Product" class=" form-control-label">{{ __('all.Name Product') }}</label>
 													 </div>
 													 <div class="col-12 col-md-9">
-														 <input type="text" id="product_name_english" name="product_name_english" placeholder="product_name_english" class="form-control">
-														<input type="text" id="product_name_arabic" name="product_name_arabic" placeholder="product_name_arabic" class="form-control">
+														 <input type="text" id="product_name_english" name="product_name_english" placeholder="{{ __('all.product_name_english') }}" class="form-control">
+														<input type="text" id="product_name_arabic" name="product_name_arabic" placeholder="{{ __('all.product_name_arabic') }}" class="form-control">
 													</div>
 											 </div>
 											 <div class="row form-group">
 													 <div class="col col-md-3">
-															 <label for="price" class=" form-control-label">Price</label>
+															 <label for="price" class=" form-control-label">{{ __('all.price') }}</label>
 													 </div>
 
 													 <div class="col-12 col-md-9">
-														<input type="number" id="price" name="price" placeholder="price" class="form-control">
+														<input type="number" id="price" name="price" placeholder="{{ __('all.price') }}" class="form-control">
 											 		</div>
 											</div>
 											 <div class="row form-group">
 												<div class="col col-md-3">
-														<label for="Quantity" class="form-control-label">Quantity</label>
+														<label for="Quantity" class="form-control-label">{{ __('all.Quantity') }}</label>
 												</div>
 												<div class="col-12 col-md-9">
-													<input type="number" id="Quantity" name="Quantity" placeholder="Quantity" class="form-control">
+													<input type="number" id="Quantity" name="Quantity" placeholder="{{ __('all.Quantity') }}" class="form-control">
                                                 </div>
 											  </div>
 											 <div class="row form-group">
 													 <div class="col col-md-3">
-															 <label for="textarea-input" class=" form-control-label">Description</label>
+															 <label for="textarea-input" class=" form-control-label">{{ __('all.Description') }}</label>
 													 </div>
 													 <div class="col-12 col-md-9">
-															 <textarea name="description_en" id="textarea-input" rows="9" placeholder="Description_english" class="form-control"></textarea>
-															 <textarea name="description_ar" id="textarea-input" rows="9" placeholder="Description_arabic" class="form-control"></textarea>
+															 <textarea name="description_en" id="textarea-input" rows="9" placeholder="{{ __('all.description_english') }}" class="form-control"></textarea>
+															 <textarea name="description_ar" id="textarea-input" rows="9" placeholder="{{ __('all.description_arabic') }}" class="form-control"></textarea>
 											  </div>
 											 </div>
 											 <div class="row form-group">
 													 <div class="col col-md-3">
-															 <label for="select" class=" form-control-label">Category</label>
+															 <label for="select" class=" form-control-label">{{ __('all.Category') }}</label>
 													 </div>
 													 <div class="col-12 col-md-9">
 															 <select name="category" class="form-control">
@@ -63,7 +63,7 @@
 											 </div>
 											 <div class="row form-group">
 													 <div class="col col-md-3">
-															 <label for="select" class=" form-control-label">Brand</label>
+															 <label for="select" class=" form-control-label">{{ __('all.Brand') }}</label>
 													 </div>
 													 <div class="col-12 col-md-9">
 															 <select name="brand" class="form-control">
@@ -75,16 +75,16 @@
 											 </div>
 											 <div class="row form-group">
 												<div class="col col-md-3">
-														 <label for="size" class=" form-control-label">Size</label>
+														 <label for="size" class=" form-control-label">{{ __('all.Size') }}</label>
 												 </div>
 
 												 <div class="col-12 col-md-9">
-													<input type="number" name="size" placeholder="screen size" class="form-control">
+													<input type="number" name="size" placeholder="{{ __('all.screen_size') }}" class="form-control">
 										 		</div>
 											</div>
 												<div class="row form-group">
 													<div class="col col-md-3">
-															<label for="select" class=" form-control-label">Color</label>
+															<label for="select" class=" form-control-label">{{ __('all.color') }}</label>
 													</div>
 													<div class="col-12 col-md-9">
 														<select name="color[]"  class="form-control" multiple>
@@ -96,7 +96,7 @@
 										</div>
 											 <div class="row form-group">
 													 <div class="col col-md-3">
-															 <label for="file-input" class=" form-control-label">Picture</label>
+															 <label for="file-input" class=" form-control-label">{{ __('all.picture') }}</label>
 													 </div>
 													 <div class="col-12 col-md-9">
 															 <input type="file" id="file-input" name="main_image" class="form-control-file">
@@ -104,7 +104,7 @@
 											 </div>
 											 <div class="row form-group">
 													 <div class="col col-md-3">
-															 <label for="file-multiple-input" class=" form-control-label">Another Pictures</label>
+															 <label for="file-multiple-input" class=" form-control-label">{{ __('all.Another Pictures') }}</label>
 													 </div>
 													 <div class="col-12 col-md-9">
 															 <input type="file"  name="multiple_images[]" multiple="" class="form-control-file">
@@ -114,9 +114,9 @@
 							 	</div>
 								 <div class="card-footer">
 										 <button type="submit" class="btn btn-primary btn-sm">
-												  Submit
+												  {{ __('all.Submit') }}
 										 </button>
-										   <input type="reset" value="Reset" class="btn btn-danger">
+										   <input type="reset" value="{{ __('all.Reset') }}" class="btn btn-danger">
 								 </div>
 							 </form>
 					 </div>
@@ -132,18 +132,18 @@
                        <tr>
 						
 						   <th>#</th>
-						   <th>name in English</th>
-						   <th>name in Arabic</th>
-                           <th>category</th>
-						   <th>Brand</th>
-						   <th>Quantity</th>
-                           <th>description in English</th>
-						   <th>Size</th>
-						   <th>Color</th>
-                           <th>price</th>
-						   <th>image</th>
- 						   <th>Edit</th>
-						   <th>delete</th>
+						   <th>{{ __('all.Name in English') }}</th>
+						   <th>{{ __('all.Name in Arabic') }}</th>
+                           <th>{{ __('all.Category') }}</th>
+						   <th>{{ __('all.Brand') }}</th>
+						   <th>{{ __('all.Quantity') }}</th>
+                           <th>{{ __('all.description in English') }}</th>
+						   <th>{{ __('all.Size') }}</th>
+						   <th>{{ __('all.color') }}</th>
+                           <th>{{ __('all.price') }}</th>
+						   <th>{{ __('all.image') }}</th>
+ 						   <th>{{ __('all.Edit') }}</th>
+						   <th>{{ __('all.delete') }}</th>
 							 
                        </tr>
                    </thead>
@@ -168,8 +168,8 @@
 						   	</td>
                            <td>{{$product->price}}</td>
 							<td><img src="{{asset($product->main_image)}}" alt="product1" height="100" width="100"></td>
- 							<td><a href="{{route('edit_product_page',$product->id)}}" class="btn btn-info">Edit</a></td>
- 						  	<td><a href="{{route('delete_product',$product->id)}}" class="btn btn-danger">Delete</a></td>
+ 							<td><a href="{{route('edit_product_page',$product->id)}}" class="btn btn-info">{{ __('all.Edit') }}</a></td>
+ 						  	<td><a href="{{route('delete_product',$product->id)}}" class="btn btn-danger">{{ __('all.delete') }}</a></td>
                        </tr>
                         @endforeach 	                   
                    </tbody>
