@@ -60,7 +60,7 @@ return [
     'Update Category Form' => 'Update Category Form',
     'category_name_english' => 'category_name_english',
     'category_name_arabic' => 'category_name_arabic',
-    'ALL CATEGORIES' => 'ALL CATEGORIES',
+    'ALL CATEGORIES' => 'All categories',
     'POPULAR PRODUCTS' => 'POPULAR PRODUCTS',
     'RELATED PRODUCTS' => 'RELATED PRODUCTS',
     'additional informations'=> 'Additional Informations',

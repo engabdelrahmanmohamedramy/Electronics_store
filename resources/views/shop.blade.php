@@ -71,8 +71,7 @@
 									<div class="product-info">
 										<a href="{{route('details',$product->id)}}" class="product-name"><span>{{$product->name_en}}</span></a>
 										<div class="wrap-price"><span class="product-price">$250.00</span></div>
-										<a href="#" class="btn add-to-cart">Add To Cart</a>
-									</div>
+							<a href="{{route('add_cart',$product->id)}}" class="btn add-to-cart">Add To Cart</a>	    </div>
 								</div>
 							</li>
 							@endforeach

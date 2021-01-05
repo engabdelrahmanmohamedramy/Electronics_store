@@ -8,6 +8,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,21 +49,19 @@ Route::get('/terms-conditions', function () {
 })->name('terms-conditions');
 
 
-Route::get('/cart',[CartController::class, 'cart'])->name('cart');
-
-
 Route::get('/contact-us',[ContactController::class, 'contact'])->name('contact-us');
 Route::post('/send-message',[ContactController::class, 'sendEmail'])->name('contact.send');
-
-
-Route::get('/checkout',[CheckoutController::class, 'checkout'])->name('checkout');
-
 
 Route::get('/language/{lang}',[MainController::class, 'language'])->name('language');
 
 
 Route::middleware(['admin'])->prefix('/admin')->group(function () 
 {
+	/**admin**/
+
+	Route::get('/admin',[AdminController::class, 'admin'])->name('admin');
+
+
 	/** brands **/
 	Route::get('/brands',[BrandController::class, 'brands'])->name('brands');
 	Route::post('/add_brand',[BrandController::class, 'add_brand'])->name('add_brand');
@@ -92,9 +93,27 @@ Route::middleware(['admin'])->prefix('/admin')->group(function ()
 	Route::get('/delete_product/{id}',[ProductController::class, 'delete_product'])->name('delete_product');
 
 	/** users **/ 
-	Route::get('/users',[UserController::class, 'users'])->name('users');
+	
 	Route::get('/admins',[UserController::class, 'admins'])->name('admins');
+	Route::get('/users',[UserController::class, 'users'])->name('users');
+	Route::post('/add_user',[UserController::class, 'add_user'])->name('add_user');
+	Route::post('/add_admin',[UserController::class, 'add_admin'])->name('add_admin');
 
+	Route::get('/edit_admin_page/{id}',[UserController::class, 'edit_admin_page'])->name('edit_admin_page');
+	Route::post('/update_admin/{id}',[UserController::class, 'update_admin'])->name('update_admin');
+	
+	Route::get('/edit_user_page/{id}',[UserController::class, 'edit_user_page'])->name('edit_user_page');
+	Route::post('/update_user/{id}',[UserController::class, 'update_user'])->name('update_user');
+	Route::get('/delete_user/{id}',[UserController::class, 'delete_user'])->name('delete_user');
+
+});
+
+Route::middleware(['auth'])->prefix('/user')->group(function () 
+{	
+	Route::get('/add_cart/{id}',[CartController::class, 'add_cart'])->name('add_cart');
+	Route::get('/cart',[CartController::class, 'cart'])->name('cart');
+
+	Route::get('/checkout',[CheckoutController::class, 'checkout'])->name('checkout');
 });
 
 

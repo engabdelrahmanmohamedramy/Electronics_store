@@ -241,7 +241,7 @@
 								
 								@if(Auth::check() && Auth::user()->role >= 1)
 									<li class="menu-item">
-										<a href="{{route('brands')}}" class="link-term mercado-item-title">{{__('all.admin')}}</a>
+										<a href="{{route('admin')}}" class="link-term mercado-item-title">{{__('all.admin')}}</a>
 									</li>
 								@endif
 							</ul>

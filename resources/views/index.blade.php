@@ -1,11 +1,15 @@
 @extends('layout.all_user')
+@section('css')
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick-theme.css')}}">
+@endsection
 @section('content')
 	<main id="main">
 		<div class="container">
 
 			<!--MAIN SLIDE-->
 			<div class="wrap-main-slide">
-				<div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
+				<div class="big-banner">
 					<div class="item-slide">
 						<img src="assets/images/main-slider-1-1.png" alt="Smart Phone" class="img-slide">
 						<div class="slide-info slide-1">
@@ -1064,4 +1068,9 @@
 		</div>
 
 	</main>
+@endsection
+
+@section('js')
+	<script src="{{asset('assets/js/slick.min.js')}}"></script>
+	<script src="{{asset('assets/js/script.js')}}"></script>
 @endsection

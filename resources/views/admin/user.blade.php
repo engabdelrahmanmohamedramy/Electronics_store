@@ -7,27 +7,22 @@
 	   <div class="col-lg-6">
 			<div class="card">
 					<div class="card-header"><h2>{{ __('all.Create User') }}</h2></div>
-					<div class="card-body card-block">
-							<form action="" method="post" class="">
+				<div class="card-body card-block">
+				        @if(url()->current()==  route('admins'))
+              <form action="{{route('add_admin')}}" method="post" class="">
+          @elseif(url()->current()==  route('users'))
+        <form action="{{route('add_user')}}" method="post" class="">
+      @endif
+				              @csrf
 									<div class="form-group">
 											<div class="input-group">
-													<div class="input-group-addon">
-															<i class="fa fa-user"></i>
-													</div>
-													<input type="text" id="user_name_english" name="user_name_english" placeholder="{{ __('all.user_name_english') }}" class="form-control">
-													<input type="text" id="user_name_arabic" name="user_name_arabic" placeholder="{{ __('all.user_name_arabic') }}" class="form-control">
+										              <div class="input-group-addon"><i class="fa fa-user"></i>  {{ __('all.name') }} 		
+										              </div>
+
+													<input type="text" id="user_name_english" name="user_name_english" placeholder="{{ __('all.user_name_english') }}" class="form-control" value="{{ old('user_name_english') }}">
+													<input type="text" id="user_name_arabic" name="user_name_arabic" placeholder="{{ __('all.user_name_arabic') }}" class="form-control" value="{{ old('user_name_arabic') }}" >
 											</div>
 									</div>
-									<div class="form-group">
-											<div class="input-group">
-													<div class="input-group-addon">
-															<i class="fa fa-user"></i>
-													</div>
-													<select name="select" id="select" class="form-control">
-														<option value="0">{{ __('all.user') }}</option>
-														<option value="1">{{ __('all.Admin') }}</option>
-												</select>
-											</div>
 										</div>
 									
 									<div class="form-group">
@@ -35,7 +30,7 @@
 													<div class="input-group-addon">
 															<i class="fa fa-envelope"></i>
 													</div>
-													<input type="email" id="email" name="email" placeholder="{{ __('all.email') }}" class="form-control">
+													<input type="email" id="email" name="email" placeholder="{{ __('all.email') }}" class="form-control"value="{{ old('email') }}">
 											</div>
 									</div>
 									<div class="form-group">
@@ -43,13 +38,20 @@
 													<div class="input-group-addon">
 															<i class="fa fa-asterisk"></i>
 													</div>
-													<input type="password" id="password" name="password" placeholder="Password" class="form-control">
+													<input type="password" id="password" name="password_confirmation" placeholder="Password" class="form-control"  value="{{ old('password') }}">
+											</div>
+									</div>
+									<div class="form-group">
+											<div class="input-group">
+													<div class="input-group-addon">
+															<i class="fa fa-asterisk"></i>
+													</div>
+													<input type="password" id="password" name="confirm" placeholder="confirm" class="form-control"  value="{{ old('password') }}">
 											</div>
 									</div>
 									<div class="form-actions form-group">
-											<button type="submit" class="btn btn-success btn-sm">{{ __('all.Submit') }}</button>
-	                            <input type="reset" value="{{ __('all.Reset') }}" class="btn btn-danger">
-									</div>
+					            <button type="submit" class="btn btn-primary btn-sm">{{ __('all.Submit') }}</button>
+					                </div>
 							</form>
 					</div>
 			</div>
@@ -105,14 +107,11 @@
 																			@endif
 																	 </div>
 															 </td>
+															 <td></td>
 															 <td>
-																	 <span class="more">
-																			 <i class="zmdi zmdi-more"></i>
-																	 </span>
-															 </td>
-															 <td>
-																<a href="edit_user.html"><input class="bg-success" type="button" value="{{ __('all.Edit') }}" name="Edit"/></a></td>
-		 													<td><input class="bg-danger" type="button" value="{{ __('all.delete') }}" name="Delete"/></td>
+
+															 	<a href="{{route('edit_user_page',$user->id)}}" class="btn btn-info ">{{ __('all.Edit') }}</a></td>
+                                                             <td><a href="{{route('delete_user',$user->id)}}" class="btn btn-danger delete">{{ __('all.delete') }}</a></td>
 													 </tr>
 													 @endforeach
 
