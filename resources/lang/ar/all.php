@@ -106,5 +106,18 @@ return [
     'Create User' => 'إنشاء مستخدم',
     'user_name_english' => 'إسم المستخدم بالإنجليزي',
     'user_name_arabic' => 'إسم المستخدم بالعربي',
+    'LEAVE A MESSAGE' => 'رسالتك يا عزيزي العميل',
+    'Name' => 'الإسم',
+    'Email' => 'الإيميل',
+    'Number Phone' => 'رقم التليفون',
+    'Comment' => 'نص الرسالة',
+    'Phone'=>'تليفون',
+    'CHECKOUT' => 'تفاصيل الدفع',
+    'BILLING ADDRESS' => 'العنوان بالتفصيل',
+    'Address:' => 'العنوان',
+    'Payment Details:' => 'تفاصيل الدفع',
+    'ORDER SUMMARY' => 'ملخص الاوردر',
+    'Total' => 'السعر الكلي',
+    'PRODUCT CATEGORIES' => 'أقسام المنتجات',
 
 ];

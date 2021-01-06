@@ -8,14 +8,14 @@
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="#" class="link">home</a></li>
-					<li class="item-link"><span>login</span></li>
+					<li class="item-link"><a href="{{route('index')}}" class="link">{{__('all.home')}}</a></li>
+					<li class="item-link"><span>{{__('all.cart')}}</span></li>
 				</ul>
 			</div>
 			<div class=" main-content-area">
 
 				<div class="wrap-iten-in-cart">
-					<h3 class="box-title">Products Name</h3>
+					<h3 class="box-title">{{__('all.products')}}</h3>
 					<ul class="products-cart">
 						@foreach($carts as $cart)
 						<li class="pr-cart-item">
@@ -48,198 +48,15 @@
 
 				<div class="summary">
 					<div class="order-summary">
-						<h4 class="title-box">Order Summary</h4>
+						<h4 class="title-box">{{__('all.ORDER SUMMARY')}}</h4>
 						<p class="summary-info"><span class="title">Subtotal</span><b class="index">{{$total_price}}</b></p>
 						<p class="summary-info"><span class="title">Shipping</span><b class="index">100</b></p>
-						<p class="summary-info total-info "><span class="title">Total</span><b class="index">{{$total_price + 100}}</b></p>
+						<p class="summary-info total-info "><span class="title">{{__('all.Total')}}</span><b class="index">{{$total_price + 100}}</b></p>
 					</div>
 					<div class="checkout-info">
-						<label class="checkbox-field">
-							<input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have promo code</span>
-						</label>
-						<a class="btn btn-checkout" href="checkout.html">Check out</a>
-						<a class="link-to-shop" href="shop.html">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+						<a class="btn btn-checkout" href="{{route('checkout')}}">{{__('all.CHECKOUT')}}</a>
+						<a class="link-to-shop" href="{{route('shop')}}">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
 					</div>
-					<div class="update-clear">
-						<a class="btn btn-clear" href="#">Clear Shopping Cart</a>
-						<a class="btn btn-update" href="#">Update Shopping Cart</a>
-					</div>
-				</div>
-
-				<div class="wrap-show-advance-info-box style-1 box-in-site">
-					<h3 class="title-box">Most Viewed Products</h3>
-					<div class="wrap-products">
-						<div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}' >
-
-							<div class="product product-style-2 equal-elem ">
-						<div class="product-thumnail">
-							<a href="detail.html" title="Iphones product , Android products">
-								<figure><img src="assets/images/products/digital_01.jpg" width="800" height="800" alt="Iphones product , Android products"></figure>
-							</a>
-							<div class="group-flash">
-								<span class="flash-item bestseller-label">Bestseller</span>
-							</div>
-							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
-							</div>
-						</div>
-						<div class="product-info text-center">
-							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-							<div class="text-center"><span class="product-price"><h3>$250.00</h3></span></div>
-						</div>
-						<div class="product-info text-center">
-						<a href="#" class="btn btn-warning">Add To Cart</a>
-						</div>
-					</div>
-
-							<div class="product product-style-2 equal-elem ">
-						<div class="product-thumnail">
-							<a href="detail.html" title="Iphones product , Android products">
-								<figure><img src="assets/images/products/digital_01.jpg" width="800" height="800" alt="Iphones product , Android products"></figure>
-							</a>
-							<div class="group-flash">
-								<span class="flash-item bestseller-label">Bestseller</span>
-							</div>
-							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
-							</div>
-						</div>
-						<div class="product-info text-center">
-							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-							<div class="text-center"><span class="product-price"><h3>$250.00</h3></span></div>
-						</div>
-						<div class="product-info text-center">
-						<a href="#" class="btn btn-warning">Add To Cart</a>
-						</div>
-					</div>
-
-							<div class="product product-style-2 equal-elem ">
-						<div class="product-thumnail">
-							<a href="detail.html" title="Iphones product , Android products">
-								<figure><img src="assets/images/products/digital_01.jpg" width="800" height="800" alt="Iphones product , Android products"></figure>
-							</a>
-							<div class="group-flash">
-								<span class="flash-item bestseller-label">Bestseller</span>
-							</div>
-							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
-							</div>
-						</div>
-						<div class="product-info text-center">
-							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-							<div class="text-center"><span class="product-price"><h3>$250.00</h3></span></div>
-						</div>
-						<div class="product-info text-center">
-						<a href="#" class="btn btn-warning">Add To Cart</a>
-						</div>
-					</div>
-
-							<div class="product product-style-2 equal-elem ">
-						<div class="product-thumnail">
-							<a href="detail.html" title="Iphones product , Android products">
-								<figure><img src="assets/images/products/digital_01.jpg" width="800" height="800" alt="Iphones product , Android products"></figure>
-							</a>
-							<div class="group-flash">
-								<span class="flash-item bestseller-label">Bestseller</span>
-							</div>
-							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
-							</div>
-						</div>
-						<div class="product-info text-center">
-							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-							<div class="text-center"><span class="product-price"><h3>$250.00</h3></span></div>
-						</div>
-						<div class="product-info text-center">
-						<a href="#" class="btn btn-warning">Add To Cart</a>
-						</div>
-					</div>
-
-							<div class="product product-style-2 equal-elem ">
-						<div class="product-thumnail">
-							<a href="detail.html" title="Iphones product , Android products">
-								<figure><img src="assets/images/products/digital_01.jpg" width="800" height="800" alt="Iphones product , Android products"></figure>
-							</a>
-							<div class="group-flash">
-								<span class="flash-item bestseller-label">Bestseller</span>
-							</div>
-							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
-							</div>
-						</div>
-						<div class="product-info text-center">
-							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-							<div class="text-center"><span class="product-price"><h3>$250.00</h3></span></div>
-						</div>
-						<div class="product-info text-center">
-						<a href="#" class="btn btn-warning">Add To Cart</a>
-						</div>
-					</div>
-
-							<div class="product product-style-2 equal-elem ">
-						<div class="product-thumnail">
-							<a href="detail.html" title="Iphones product , Android products">
-								<figure><img src="assets/images/products/digital_01.jpg" width="800" height="800" alt="Iphones product , Android products"></figure>
-							</a>
-							<div class="group-flash">
-								<span class="flash-item bestseller-label">Bestseller</span>
-							</div>
-							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
-							</div>
-						</div>
-						<div class="product-info text-center">
-							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-							<div class="text-center"><span class="product-price"><h3>$250.00</h3></span></div>
-						</div>
-						<div class="product-info text-center">
-						<a href="#" class="btn btn-warning">Add To Cart</a>
-						</div>
-					</div>
-
-							<div class="product product-style-2 equal-elem ">
-						<div class="product-thumnail">
-							<a href="detail.html" title="Iphones product , Android products">
-								<figure><img src="assets/images/products/digital_01.jpg" width="800" height="800" alt="Iphones product , Android products"></figure>
-							</a>
-							<div class="group-flash">
-								<span class="flash-item bestseller-label">Bestseller</span>
-							</div>
-							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
-							</div>
-						</div>
-						<div class="product-info text-center">
-							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-							<div class="text-center"><span class="product-price"><h3>$250.00</h3></span></div>
-						</div>
-						<div class="product-info text-center">
-						<a href="#" class="btn btn-warning">Add To Cart</a>
-						</div>
-					</div>
-
-							<div class="product product-style-2 equal-elem ">
-						<div class="product-thumnail">
-							<a href="detail.html" title="Iphones product , Android products">
-								<figure><img src="assets/images/products/digital_01.jpg" width="800" height="800" alt="Iphones product , Android products"></figure>
-							</a>
-							<div class="group-flash">
-								<span class="flash-item bestseller-label">Bestseller</span>
-							</div>
-							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
-							</div>
-						</div>
-						<div class="product-info text-center">
-							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-							<div class="text-center"><span class="product-price"><h3>$250.00</h3></span></div>
-						</div>
-						<div class="product-info text-center">
-						<a href="#" class="btn btn-warning">Add To Cart</a>
-						</div>
-					</div>
-						</div>
-					</div><!--End wrap-products-->
 				</div>
 
 			</div><!--end main content area-->

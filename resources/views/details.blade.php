@@ -9,7 +9,7 @@
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="#" class="link">home</a></li>
+					<li class="item-link"><a href="#" class="link">{{__('all.home')}}</a></li>
 					<li class="item-link"><span>detail</span></li>
 				</ul>
 			</div>
@@ -66,8 +66,7 @@
 							<div class="wrap-butons">
 								<a href="#" class="btn add-to-cart">Add to Cart</a>
                                 <div class="wrap-btn">
-                                    <a href="#" class="btn btn-compare">Add Compare</a>
-                                    <a href="#" class="btn btn-wishlist">Add Wishlist</a>
+                                    <a href="{{route('add_favourite',$product->id)}}" class="btn btn-wishlist">Add Wishlist</a>
                                 </div>
 							</div>
 						</div>
@@ -252,7 +251,7 @@
 								@foreach($related_products as $related_product )
 								<div class="product product-style-2 equal-elem ">
 									<div class="product-thumnail">
-										<a href="detail.html" title="Iphones product , Android products">
+										<a href="{{route('details',$related_product->id)}}" title="Iphones product , Android products">
 											<figure><img src="{{asset($related_product->main_image)}}" width="800" height="800" alt="Iphones product , Android products"></figure>
 										</a>
 										<div class="group-flash">

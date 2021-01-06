@@ -10,6 +10,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\FavouriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +24,12 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+// Route::get('/', function () {
+//     return view('index');
+// })->name('index');
+
+Route::get('/',[MainController::class, 'index'])->name('index');
+
 
 Route::get('/about', function () {
     return view('about-us');
@@ -113,7 +118,13 @@ Route::middleware(['auth'])->prefix('/user')->group(function ()
 	Route::get('/add_cart/{id}',[CartController::class, 'add_cart'])->name('add_cart');
 	Route::get('/cart',[CartController::class, 'cart'])->name('cart');
 
-	Route::get('/checkout',[CheckoutController::class, 'checkout'])->name('checkout');
+	Route::get('/checkout/',[CartController::class, 'checkout'])->name('checkout');
+	Route::post('/add_bill/',[CartController::class, 'add_bill'])->name('add_bill');
+
+
+    Route::get('/add_favourite/{id}',[FavouriteController::class, 'add_favourite'])->name('add_favourite');
+	Route::get('/favourite',[FavouriteController::class, 'favourite'])->name('favourite');
+
 });
 
 

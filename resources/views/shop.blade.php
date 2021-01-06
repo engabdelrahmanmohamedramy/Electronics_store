@@ -7,8 +7,8 @@
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="{{route('index')}}" class="link">home</a></li>
-					<li class="item-link"><span>Electronics</span></li>
+					<li class="item-link"><a href="{{route('index')}}" class="link">{{__('all.home')}}</a></li>
+					<li class="item-link"><span>{{__('all.shop')}}</span></li>
 				</ul>
 			</div>
 			<div class="row">
@@ -70,7 +70,8 @@
 									</div>
 									<div class="product-info">
 										<a href="{{route('details',$product->id)}}" class="product-name"><span>{{$product->name_en}}</span></a>
-										<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										<a href="{{route('add_favourite',$product->id)}}" class="product-name"><span>Add to favourite</span></a>
+										<div class="wrap-price"><span class="product-price">{{$product->price}}</span></div>
 							<a href="{{route('add_cart',$product->id)}}" class="btn add-to-cart">Add To Cart</a>	    </div>
 								</div>
 							</li>
@@ -157,7 +158,7 @@
 
 					
 <div class="widget mercado-widget widget-product">
-						<h2 class="widget-title">Popular Products</h2>
+						<h2 class="widget-title">{{__('all.POPULAR PRODUCTS')}}</h2>
 						<div class="widget-content">
 							<ul class="products">
 						@foreach($popular_products as $popular_product)

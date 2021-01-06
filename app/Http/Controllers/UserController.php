@@ -54,16 +54,16 @@ class UserController extends Controller
     {
         $users = User::all();
         $user = User::find($user_id);
-        return view('admin/user',compact('user','users'));
+        return view('admin/edit_user',compact('user','users'));
     }
 
     public function update_user(Request $request,$user_id)
     {
-        $this->validator($request->all())->validate();
 
         $user = User::find($user_id);
         $user->name_ar = $request->get('user_name_arabic');
         $user->name_en = $request->get('user_name_english');
+        $user->role = 0;
         $user->email = $request->get('email');
         $user->password = Hash::make($request->get('password'));
         $user->save();
@@ -75,18 +75,18 @@ class UserController extends Controller
     {
         $users = User::all();
         $user = User::find($user_id);
-        return view('admin/user',compact('user','users'));
+        return view('admin/edit_admin',compact('user','users'));
     }
 
     public function update_admin(Request $request,$user_id)
     {
-        $this->validator($request->all())->validate();
 
         $user = User::find($user_id);
         $user->name_ar = $request->get('user_name_arabic');
         $user->name_en = $request->get('user_name_english');
+        $user->role = 1;
         $user->email = $request->get('email');
-        $user->password = $request->get('password');
+        $user->password = Hash::make($request->get('password'));
         $user->save();
         return redirect()->route('admins');
     }

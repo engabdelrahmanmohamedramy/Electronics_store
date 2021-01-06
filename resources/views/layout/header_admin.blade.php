@@ -142,8 +142,8 @@
 								<a href="#" class="link-direction">
 									<i class="fa fa-heart" aria-hidden="true"></i>
 									<div class="left-info">
-										<span class="index">0 item</span>
-										<span class="title">{{__('all.Wishlist')}}</span>
+										<span class="index">4 items</span>
+										<a href="{{route('favourite')}}" class="link-term mercado-item-title"><span class="title">{{__('all.Wishlist')}}</span></a>
 									</div>
 								</a>
 							</div>
@@ -152,7 +152,7 @@
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
 										<span class="index">4 items</span>
-										<span class="title">{{__('all.CART')}}</span>
+										<a href="{{route('cart')}}" class="link-term mercado-item-title"><span class="title">{{__('all.CART')}}</span></a>
 									</div>
 								</a>
 							</div>
